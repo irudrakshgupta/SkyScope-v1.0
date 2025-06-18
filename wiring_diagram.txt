@@ -1,0 +1,48 @@
+ADS-B Flight Tracker Wiring Diagram
+====================================
+
+Arduino Mega 2560 Pin Connections:
+
+POWER SUPPLY:
+- Arduino VIN -> 5V Power Supply
+- Arduino GND -> Power Supply GND
+
+ADS-B RECEIVER MODULE:
+- Arduino RX1 (Pin 19) <- ADS-B Receiver TX
+- Arduino GND <- ADS-B Receiver GND
+- Arduino 5V <- ADS-B Receiver VCC (if 5V module)
+- Arduino 3.3V <- ADS-B Receiver VCC (if 3.3V module)
+
+OLED DISPLAY (I2C):
+- Arduino SDA (Pin 20) <- OLED SDA
+- Arduino SCL (Pin 21) <- OLED SCL
+- Arduino 5V <- OLED VCC
+- Arduino GND <- OLED GND
+
+ANTENNA:
+- 1090 MHz Antenna -> ADS-B Receiver SMA Connector
+
+OPTIONAL COMPONENTS:
+
+BUZZER (for audio alerts):
+- Arduino Pin 8 -> Buzzer Positive
+- Arduino GND -> Buzzer Negative
+
+LED INDICATOR:
+- Arduino Pin 13 -> LED Positive (with 220Ω resistor)
+- Arduino GND -> LED Negative
+
+SD CARD MODULE (for logging):
+- Arduino Pin 53 -> SD Card CS
+- Arduino Pin 52 -> SD Card SCK
+- Arduino Pin 51 -> SD Card MOSI
+- Arduino Pin 50 -> SD Card MISO
+- Arduino 5V -> SD Card VCC
+- Arduino GND -> SD Card GND
+
+NOTES:
+- Use high-quality jumper wires for reliable connections
+- Ensure proper power supply (5V 2A minimum recommended)
+- Keep antenna away from electronic interference sources
+- Mount antenna outdoors or near windows for better reception
+- Use breadboard for prototyping or create custom PCB for permanent setup 

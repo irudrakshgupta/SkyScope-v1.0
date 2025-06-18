@@ -1,0 +1,129 @@
+Required Arduino Libraries for ADS-B Flight Tracker
+==================================================
+
+This file lists all the libraries required for the ADS-B Flight Tracker project
+and provides installation instructions.
+
+## Core Libraries
+
+### 1. Adafruit GFX Library
+- **Purpose**: Graphics library for displays
+- **Version**: 1.11.5 or later
+- **Installation**: 
+  - Open Arduino IDE
+  - Go to Tools > Manage Libraries
+  - Search for "Adafruit GFX"
+  - Click Install
+
+### 2. Adafruit SSD1306 Library
+- **Purpose**: Driver for SSD1306 OLED displays
+- **Version**: 2.5.7 or later
+- **Installation**:
+  - Open Arduino IDE
+  - Go to Tools > Manage Libraries
+  - Search for "Adafruit SSD1306"
+  - Click Install
+
+### 3. Wire Library
+- **Purpose**: I2C communication (built-in)
+- **Version**: Built into Arduino IDE
+- **Installation**: No installation required
+
+### 4. SoftwareSerial Library
+- **Purpose**: Software serial communication (built-in)
+- **Version**: Built into Arduino IDE
+- **Installation**: No installation required
+
+## Optional Libraries
+
+### 5. SPI Library
+- **Purpose**: SPI communication for SD card (built-in)
+- **Version**: Built into Arduino IDE
+- **Installation**: No installation required
+
+### 6. SD Library
+- **Purpose**: SD card operations
+- **Version**: Built into Arduino IDE
+- **Installation**: No installation required
+
+## Installation Steps
+
+### Method 1: Using Arduino IDE Library Manager (Recommended)
+
+1. Open Arduino IDE
+2. Go to **Tools > Manage Libraries**
+3. Search for each library name
+4. Click **Install** for each required library
+5. Restart Arduino IDE if prompted
+
+### Method 2: Manual Installation
+
+1. Download library ZIP files from GitHub:
+   - Adafruit GFX: https://github.com/adafruit/Adafruit-GFX-Library
+   - Adafruit SSD1306: https://github.com/adafruit/Adafruit_SSD1306
+
+2. In Arduino IDE:
+   - Go to **Sketch > Include Library > Add .ZIP Library**
+   - Select the downloaded ZIP files
+   - Restart Arduino IDE
+
+### Method 3: Using PlatformIO (Alternative IDE)
+
+If using PlatformIO instead of Arduino IDE, add to `platformio.ini`:
+
+```ini
+[env:arduino_mega2560]
+platform = atmelavr
+board = megaatmega2560
+framework = arduino
+lib_deps = 
+    adafruit/Adafruit GFX Library@^1.11.5
+    adafruit/Adafruit SSD1306@^2.5.7
+```
+
+## Library Dependencies
+
+The libraries have the following dependencies:
+- Adafruit SSD1306 depends on Adafruit GFX
+- Adafruit GFX has no dependencies
+- Built-in libraries (Wire, SoftwareSerial, SPI, SD) are included with Arduino IDE
+
+## Verification
+
+To verify all libraries are installed correctly:
+
+1. Open any sketch from this project
+2. Go to **Sketch > Verify/Compile**
+3. If compilation succeeds, all libraries are properly installed
+4. If you see errors about missing libraries, install the missing ones
+
+## Troubleshooting
+
+### Common Issues:
+
+1. **"Adafruit_SSD1306.h: No such file or directory"**
+   - Install Adafruit SSD1306 library
+   - Make sure to install Adafruit GFX first
+
+2. **"Adafruit_GFX.h: No such file or directory"**
+   - Install Adafruit GFX library
+
+3. **Compilation errors with display functions**
+   - Check that both Adafruit GFX and Adafruit SSD1306 are installed
+   - Verify library versions are compatible
+
+4. **I2C communication issues**
+   - Check Wire library is available (should be built-in)
+   - Verify I2C connections (SDA/SCL pins)
+
+### Library Version Compatibility:
+
+- Adafruit GFX Library: 1.11.5 or later
+- Adafruit SSD1306: 2.5.7 or later
+- Arduino IDE: 1.8.0 or later recommended
+
+## Additional Resources
+
+- Adafruit GFX Documentation: https://learn.adafruit.com/adafruit-gfx-graphics-library
+- Adafruit SSD1306 Documentation: https://learn.adafruit.com/monochrome-oled-breakouts
+- Arduino Library Manager Guide: https://www.arduino.cc/en/Guide/Libraries 
